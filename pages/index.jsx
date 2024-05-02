@@ -3,13 +3,8 @@ import GamePage from "../src/component/gamePage/GamePage"
 
 function HomePage () {
   
-  return (
-   
-    
-    <GamePage />
-    
-   
-    
+  return ( 
+    <GamePage />  
   )
 }
 
