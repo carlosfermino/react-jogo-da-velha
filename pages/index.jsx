@@ -1,9 +1,15 @@
+import GamePage from "../src/component/gamePage/GamePage"
+
+
 function HomePage () {
   
   return (
-    <div>
-      SejaDev
-    </div>
+   
+    
+    <GamePage />
+    
+   
+    
   )
 }
 
