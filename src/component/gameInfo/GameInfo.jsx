@@ -27,7 +27,7 @@ function GameInfo ({currentPlayer, winner, onReset}) {
       {
         winner !== 0 &&
         <>
-          <h4 className={style.fimDeJogo}>Fim de Jogo !!! Campeão:</h4>
+          <h4>Fim de Jogo !!! Campeão:</h4>
           {
             winner === 1 && 
               <Icon iconName="circle" />
@@ -41,7 +41,7 @@ function GameInfo ({currentPlayer, winner, onReset}) {
      
       <Button 
       onClick={onReset} 
-      disabled={!shouldEnableButton}
+      disabled={!shouldEnableButton()}
       >
       
         Reiniciar
