@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
 //import { useEffect } from 'react'
-
 import style from './Game.module.css'
+
 import GameOption from '../gameOption/GameOption'
 import GameInfo from '../gameInfo/GameInfo'
-import Button from '../button/Button'
+import Score from '../score/Score'
 
 const winnerTable = [
   [0, 1, 2],
@@ -69,6 +69,7 @@ function Game () {
   useEffect (() => {if (winner !== 0) setDraw(false)}, [winner])
   
   return (
+    <> 
     <div className={style.gameContent}>
       <div className={style.game}>
         {
@@ -83,13 +84,15 @@ function Game () {
           )
        }
       </div>
-       <GameInfo 
-        currentPlayer={currentPlayer} 
-        winner={winner}
-        onReset={handleRest}
-        isDraw={draw}
+        <GameInfo 
+          currentPlayer={currentPlayer} 
+          winner={winner}
+          onReset={handleRest}
+          isDraw={draw}
         />
-    </div>
+      </div>
+      <Score />
+    </>
   )
 }
 export default Game
