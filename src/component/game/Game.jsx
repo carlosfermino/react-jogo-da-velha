@@ -24,6 +24,9 @@ function Game () {
   const [winnerLine, setWinnerLine] = useState([])
   const [draw, setDraw] = useState(false)
 
+  const [scoreX, setScoreX] = useState(0)
+  const [scoreO, setScoreO] = useState(0)
+
   const handleClick = (position) => {
     if (gameState[position] === 0 && winner === 0) {
       let newGameState = [...gameState] 
@@ -39,6 +42,12 @@ function Game () {
       if (sum === 3 || sum === -3) {
         setWinner(sum / 3)
         setWinnerLine(line)
+        if (sum > 0 ) {
+          setScoreO(scoreO + 1)
+        }else {
+          setScoreX(scoreX + 1)
+        }
+        //sum > 0 ? setScoreO(scoreO + 1) : setScoreX(scoreX + 1)
       }
     })
   }
@@ -88,10 +97,13 @@ function Game () {
           currentPlayer={currentPlayer} 
           winner={winner}
           onReset={handleRest}
-          isDraw={draw}
+          isDraw={draw} 
         />
       </div>
-      <Score />
+      <Score 
+        scoreX={scoreX}
+        scoreO={scoreO}
+      />
     </>
   )
 }

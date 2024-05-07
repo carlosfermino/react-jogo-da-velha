@@ -2,7 +2,7 @@ import style from './Score.module.css'
 
 import Icon from '../icon/Icon'
 
-function Score () {
+function Score ({scoreX, scoreO}) {
   return (
     <>
     <h4>
@@ -11,11 +11,11 @@ function Score () {
     <div  className={style.score}>
       <div className={style.ScoreContent}>
         <Icon iconName="circle" />
-        <h2>0</h2>
+        <h2>{scoreO}</h2>
       </div>
       <div className={style.ScoreContent}>
       <Icon iconName="x" />
-        <h2>0</h2>
+        <h2>{scoreX}</h2>
       </div>
     </div>
     </>
